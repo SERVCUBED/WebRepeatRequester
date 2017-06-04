@@ -32,6 +32,9 @@ namespace WebRepeatRequester
                 }
             }
 
+            var dateText = String.Format("\r\n    Initiated\r\n        {0}\r\n    Request Started\r\n        {1}\r\n    Finished\r\n        {2}\r\n    Request Duration\r\n        {3} ms",
+                FormatDate(wr.Timings.Initiated), FormatDate(wr.Timings.RequestStarted), FormatDate(wr.Timings.Finished), wr.Timings.ReqDuration);
+
             var matchesText = "";
             if (wr.Matches.Count > 0)
             {
@@ -46,13 +49,15 @@ namespace WebRepeatRequester
                 }
             }
 
-            textBox1.Text = String.Format("Final URL: {0}\r\n\r\nInitial URL: {1}\r\n\r\nContent Type: {2}\r\n\r\nContent Length: {3}\r\n\r\nLoaded From Cache: {4}\r\n\r\nDate: {5} {6}\r\n\r\nHTTP Status Code: {7}\r\n\r\nHeaders: {8}{9}", 
-                wr.URL, wr.InitialURL, wr.ContentType, wr.Content?.Length, wr.IsFromCache.ToString(), wr.Date.ToShortDateString(), wr.Date.TimeOfDay, wr.StatusCode, headersText, matchesText);
+            textBox1.Text = String.Format("Final URL: {0}\r\n\r\nInitial URL: {1}\r\n\r\nContent Type: {2}\r\n\r\nContent Length: {3}\r\n\r\nLoaded From Cache: {4}\r\n\r\nTimings: {5}\r\n\r\nHTTP Status Code: {6}\r\n\r\nHeaders: {7}{8}", 
+                wr.URL, wr.InitialURL, wr.ContentType, wr.Content?.Length, wr.IsFromCache.ToString(), dateText, wr.StatusCode, headersText, matchesText);
 
             textBox2.Text = wr.ContentText;
 
             Show();
         }
+
+        private string FormatDate(DateTime dt) => dt.ToShortDateString() + " " + dt.TimeOfDay;
 
         private void button2_Click(object sender, EventArgs e)
         {

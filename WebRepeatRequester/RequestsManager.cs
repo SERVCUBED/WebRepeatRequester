@@ -133,6 +133,7 @@ namespace WebRepeatRequester
         private void SendWebRequest()
         {
             var wrObject = new WebResponse();
+            wrObject.Timings.Initiated = DateTime.Now;
 
             var _wc = SetupWebClient();
 
@@ -161,8 +162,11 @@ namespace WebRepeatRequester
                     stream.Close();
                 }
 
-                wrObject.Date = DateTime.Now;
+                wrObject.Timings.RequestStarted = DateTime.Now;
                 var wr = _wc.GetResponse();
+                wrObject.Timings.Finished = DateTime.Now;
+                wrObject.Timings.ReqDuration = (wrObject.Timings.Finished - wrObject.Timings.RequestStarted).TotalMilliseconds;
+
                 wrObject.InitialURL = _URL;
                 wrObject.URL = wr.ResponseUri.ToString();
                 if (wr.SupportsHeaders)

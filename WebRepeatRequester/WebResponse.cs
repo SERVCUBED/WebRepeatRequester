@@ -9,7 +9,7 @@ namespace WebRepeatRequester
         public string URL;
         public string InitialURL;
         public int StatusCode;
-        public DateTime Date;
+        public DateTimePackage Timings = new DateTimePackage();
         public string ContentText;
         public byte[] Content;
         public WebHeaderCollection Headers;
