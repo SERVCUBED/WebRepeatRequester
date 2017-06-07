@@ -93,7 +93,24 @@ namespace WebRepeatRequester
             foreach (Match match in mc)
             {
                 if (match.Success)
-                    result.Add(match.Value);
+                {
+                    var r = match.Index + ", " + match.Value;
+
+                    if (match.Groups.Count > 1)
+                    {
+                        r += ", (";
+                        for (int i = 1; i < match.Groups.Count; i++)
+                        {
+                            r += match.Groups[i].Index + ": " + match.Groups[i].Value;
+
+                            if (i < match.Groups.Count - 1)
+                                r += ", ";
+                        }
+                        r += ")";
+                    }
+
+                    result.Add(r);
+                }
             }
 
             return result;

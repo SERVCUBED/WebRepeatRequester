@@ -145,5 +145,13 @@ namespace WebRepeatRequester
             if (chkSSL.Checked)
                 chkSSL.Enabled = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (_manager == null)
+                return;
+
+            new ViewMatchesFrm().Show(_matchSettings, _manager.Responses.ToArray());
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.headersBtn = new System.Windows.Forms.Button();
             this.matchSettingsBtn = new System.Windows.Forms.Button();
             this.chkSSL = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.delayNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeoutNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -121,7 +122,7 @@
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(349, 222);
+            this.startBtn.Location = new System.Drawing.Point(349, 251);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(75, 23);
             this.startBtn.TabIndex = 8;
@@ -186,7 +187,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(430, 13);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(385, 225);
+            this.listBox1.Size = new System.Drawing.Size(385, 264);
             this.listBox1.TabIndex = 15;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -197,7 +198,7 @@
             // 
             // onceBtn
             // 
-            this.onceBtn.Location = new System.Drawing.Point(268, 222);
+            this.onceBtn.Location = new System.Drawing.Point(349, 222);
             this.onceBtn.Name = "onceBtn";
             this.onceBtn.Size = new System.Drawing.Size(75, 23);
             this.onceBtn.TabIndex = 16;
@@ -207,7 +208,7 @@
             // 
             // headersBtn
             // 
-            this.headersBtn.Location = new System.Drawing.Point(129, 222);
+            this.headersBtn.Location = new System.Drawing.Point(129, 224);
             this.headersBtn.Name = "headersBtn";
             this.headersBtn.Size = new System.Drawing.Size(133, 23);
             this.headersBtn.TabIndex = 17;
@@ -236,11 +237,22 @@
             this.chkSSL.UseVisualStyleBackColor = true;
             this.chkSSL.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "View Matches";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 253);
+            this.ClientSize = new System.Drawing.Size(827, 286);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chkSSL);
             this.Controls.Add(this.matchSettingsBtn);
             this.Controls.Add(this.headersBtn);
@@ -290,6 +302,7 @@
         private System.Windows.Forms.Button headersBtn;
         private System.Windows.Forms.Button matchSettingsBtn;
         private System.Windows.Forms.CheckBox chkSSL;
+        private System.Windows.Forms.Button button1;
     }
 }
 

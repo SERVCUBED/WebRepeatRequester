@@ -79,6 +79,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestsManager.cs" />
     <Compile Include="StringIterator.cs" />
+    <Compile Include="ViewMatchesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewMatchesFrm.Designer.cs">
+      <DependentUpon>ViewMatchesFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebResponse.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -101,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewMatchesFrm.resx">
+      <DependentUpon>ViewMatchesFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
