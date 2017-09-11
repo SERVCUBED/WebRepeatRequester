@@ -40,7 +40,7 @@ namespace WebRepeatRequester
 
             for (int i = 0; i < _responses.Length; i++)
             {
-                textBox1.Text += "item " + i + ": " + _responses[i].Matches.Count + "results\r\n";
+                textBox1.Text += "item " + i + ": " + _responses[i].Matches.Count + " results\r\n";
 
                 foreach (var matchResponse in _responses[i].Matches)
                 {

@@ -39,6 +39,7 @@ namespace WebRepeatRequester
                 _manager = new RequestsManager(txtURI.Text, txtPostData.Text, txtUserAgent.Text, txtReferrer.Text, 
                     (int)delayNumericUpDown.Value, (int)timeoutNumericUpDown.Value, _headers, _matchSettings, chkSSL.Checked);
                 _manager.StoppedEventHandler += RequestManagerStoppedEventHandler;
+                _manager.IsRequestingEventHandler += ManagerOnIsRequestingEventHandler;
                 _lastIndex = 0;
                 startBtn.Text = "Stop";
                 _manager.Start();
@@ -52,12 +53,22 @@ namespace WebRepeatRequester
 #endif
             }
         }
-        
+
+        private void ManagerOnIsRequestingEventHandler(bool isRunning)
+        {
+            if (requestingLbl.InvokeRequired)
+            {
+                requestingLbl.Invoke((MethodInvoker)(() => ManagerOnIsRequestingEventHandler(isRunning)));
+                return;
+            }
+            requestingLbl.Visible = isRunning;
+        }
+
         private void RequestManagerStoppedEventHandler()
         {
             if (startBtn.InvokeRequired)
             {
-                startBtn.Invoke((MethodInvoker)(() => RequestManagerStoppedEventHandler()));
+                startBtn.Invoke((MethodInvoker)RequestManagerStoppedEventHandler);
                 return;
             }
             startBtn.Text = "Start";
@@ -110,6 +121,7 @@ namespace WebRepeatRequester
                 listBox1.Items.Clear();
                 _manager = new RequestsManager(txtURI.Text, txtPostData.Text, txtUserAgent.Text, txtReferrer.Text, 
                     (int)delayNumericUpDown.Value, (int)timeoutNumericUpDown.Value, _headers, _matchSettings, chkSSL.Checked);
+                _manager.IsRequestingEventHandler += ManagerOnIsRequestingEventHandler;
                 _lastIndex = 0;
                 _manager.RunOnce();
             }

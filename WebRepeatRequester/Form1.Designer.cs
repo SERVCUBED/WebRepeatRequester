@@ -49,6 +49,7 @@
             this.matchSettingsBtn = new System.Windows.Forms.Button();
             this.chkSSL = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.requestingLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.delayNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeoutNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -198,7 +199,7 @@
             // 
             // onceBtn
             // 
-            this.onceBtn.Location = new System.Drawing.Point(349, 222);
+            this.onceBtn.Location = new System.Drawing.Point(268, 251);
             this.onceBtn.Name = "onceBtn";
             this.onceBtn.Size = new System.Drawing.Size(75, 23);
             this.onceBtn.TabIndex = 16;
@@ -247,11 +248,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // requestingLbl
+            // 
+            this.requestingLbl.AutoSize = true;
+            this.requestingLbl.Location = new System.Drawing.Point(346, 235);
+            this.requestingLbl.Name = "requestingLbl";
+            this.requestingLbl.Size = new System.Drawing.Size(70, 13);
+            this.requestingLbl.TabIndex = 21;
+            this.requestingLbl.Text = "Requesting...";
+            this.requestingLbl.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 286);
+            this.Controls.Add(this.requestingLbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chkSSL);
             this.Controls.Add(this.matchSettingsBtn);
@@ -303,6 +315,7 @@
         private System.Windows.Forms.Button matchSettingsBtn;
         private System.Windows.Forms.CheckBox chkSSL;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label requestingLbl;
     }
 }
 

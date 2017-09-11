@@ -23,6 +23,8 @@ namespace WebRepeatRequester
 
         public delegate void StoppedEvent();
         public event StoppedEvent StoppedEventHandler;
+        public delegate void IsRequestingEvent(bool isRunning);
+        public event IsRequestingEvent IsRequestingEventHandler;
 
         public bool Running { get; private set; }
 
@@ -141,6 +143,8 @@ namespace WebRepeatRequester
             if (_wc == null)
                 return;
 
+            IsRequestingEventHandler?.Invoke(true);
+
             byte[] buf = new byte[8192];
             StringBuilder sb = new StringBuilder();
             try
@@ -247,6 +251,7 @@ namespace WebRepeatRequester
             }
             
             Responses.Add(wrObject);
+            IsRequestingEventHandler?.Invoke(false);
         }
 
         private void InitiateSSLTrust()
