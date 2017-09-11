@@ -68,7 +68,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "URI:";
+            this.label1.Text = WebRepeatRequester_strings.URI + ':';
             // 
             // label2
             // 
@@ -77,7 +77,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "POST Data (leave blank for GET request):";
+            this.label2.Text = WebRepeatRequester_strings.POSTDataleaveblankforGETrequest + ':';
             // 
             // txtPostData
             // 
@@ -93,7 +93,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "User Agent (for alternate, separate with \'#\'):";
+            this.label3.Text = WebRepeatRequester_strings.UserAgentforalternateseparatewith + ':';
             // 
             // txtUserAgent
             // 
@@ -111,7 +111,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Referrer:";
+            this.label4.Text = WebRepeatRequester_strings.Referrer + ':';
             // 
             // txtReferrer
             // 
@@ -127,7 +127,7 @@
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(75, 23);
             this.startBtn.TabIndex = 8;
-            this.startBtn.Text = "Start";
+            this.startBtn.Text = WebRepeatRequester_strings.Start + ':';
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
@@ -155,7 +155,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Delay (ms):";
+            this.label6.Text = WebRepeatRequester_strings.Delay + " (ms):";
             // 
             // timeoutNumericUpDown
             // 
@@ -181,7 +181,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Timeout (ms):";
+            this.label7.Text = WebRepeatRequester_strings.Timeout + "(ms):";
             // 
             // listBox1
             // 
@@ -203,7 +203,7 @@
             this.onceBtn.Name = "onceBtn";
             this.onceBtn.Size = new System.Drawing.Size(75, 23);
             this.onceBtn.TabIndex = 16;
-            this.onceBtn.Text = "Once";
+            this.onceBtn.Text = WebRepeatRequester_strings.Once + ':';
             this.onceBtn.UseVisualStyleBackColor = true;
             this.onceBtn.Click += new System.EventHandler(this.onceBtn_Click);
             // 
@@ -212,8 +212,8 @@
             this.headersBtn.Location = new System.Drawing.Point(129, 224);
             this.headersBtn.Name = "headersBtn";
             this.headersBtn.Size = new System.Drawing.Size(133, 23);
-            this.headersBtn.TabIndex = 17;
-            this.headersBtn.Text = "Edit Request Headers";
+            this.headersBtn.TabIndex = 17;;
+            this.headersBtn.Text = WebRepeatRequester_strings.EditRequestHeaders + ':';
             this.headersBtn.UseVisualStyleBackColor = true;
             this.headersBtn.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -223,7 +223,7 @@
             this.matchSettingsBtn.Name = "matchSettingsBtn";
             this.matchSettingsBtn.Size = new System.Drawing.Size(107, 23);
             this.matchSettingsBtn.TabIndex = 18;
-            this.matchSettingsBtn.Text = "Edit Match Settings";
+            this.matchSettingsBtn.Text = WebRepeatRequester_strings.EditMatchSettings + ':';
             this.matchSettingsBtn.UseVisualStyleBackColor = true;
             this.matchSettingsBtn.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -234,7 +234,7 @@
             this.chkSSL.Name = "chkSSL";
             this.chkSSL.Size = new System.Drawing.Size(116, 17);
             this.chkSSL.TabIndex = 19;
-            this.chkSSL.Text = "Accept invalid SSL";
+            this.chkSSL.Text = WebRepeatRequester_strings.AcceptInvalidSSL + ':';
             this.chkSSL.UseVisualStyleBackColor = true;
             this.chkSSL.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -244,7 +244,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 20;
-            this.button1.Text = "View Matches";
+            this.button1.Text = WebRepeatRequester_strings.ViewMatches + ':';
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -255,7 +255,7 @@
             this.requestingLbl.Name = "requestingLbl";
             this.requestingLbl.Size = new System.Drawing.Size(70, 13);
             this.requestingLbl.TabIndex = 21;
-            this.requestingLbl.Text = "Requesting...";
+            this.requestingLbl.Text = WebRepeatRequester_strings.Requesting + "...";
             this.requestingLbl.Visible = false;
             // 
             // Form1
@@ -285,7 +285,7 @@
             this.Controls.Add(this.txtURI);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
-            this.Text = "Web Repeat Requester";
+            this.Text = WebRepeatRequester_strings.WebRepeatRequesterr;
             ((System.ComponentModel.ISupportInitialize)(this.delayNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeoutNumericUpDown)).EndInit();
             this.ResumeLayout(false);
