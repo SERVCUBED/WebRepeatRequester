@@ -5,9 +5,9 @@ namespace WebRepeatRequester
 {
     public partial class Form1 : Form
     {
-        RequestsManager _manager;
-        System.Net.WebHeaderCollection _headers = new System.Net.WebHeaderCollection();
-        MatchSettings _matchSettings = new MatchSettings();
+        private RequestsManager _manager;
+        private readonly System.Net.WebHeaderCollection _headers = new System.Net.WebHeaderCollection();
+        private MatchSettings _matchSettings = new MatchSettings();
 
         public Form1()
         {
@@ -47,14 +47,14 @@ namespace WebRepeatRequester
             }
         }
 
-        private void ManagerOnIsRequestingEventHandler(bool isRunning)
+        private void ManagerOnIsRequestingEventHandler(bool isRequesting)
         {
             if (requestingLbl.InvokeRequired)
             {
-                requestingLbl.Invoke((MethodInvoker)(() => ManagerOnIsRequestingEventHandler(isRunning)));
+                requestingLbl.Invoke((MethodInvoker)(() => ManagerOnIsRequestingEventHandler(isRequesting)));
                 return;
             }
-            requestingLbl.Visible = isRunning;
+            requestingLbl.Visible = isRequesting;
         }
 
         private void RequestManagerStoppedEventHandler()
